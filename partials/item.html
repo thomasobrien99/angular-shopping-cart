@@ -17,10 +17,10 @@
 	
 	<form ng-show= $ctrl.showEditItemQuantityForm 
 				name='form'
-				ng-submit="$ctrl.editItemQuantity($ctrl.newQuantity)"
+				ng-submit="$ctrl.editItemQuantity(+$ctrl.editFormQuantity)"
 				novalidate>
 
-		<input type="text" ng-model='$ctrl.newQuantity'>
+		<input type="text" ng-model='$ctrl.editFormQuantity'>
 		<button type="submit" ng-click='$ctrl.toggleEditItemQuantityForm()' >Change Quantity</button>
 	</form>
 </li>
