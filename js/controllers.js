@@ -9,7 +9,6 @@ function ListController(InventoryService){
     var size = this.items.reduce((p,c)=>{
       return p += c.quantity;
     },0)
-
     return size ? size : "Bag is Empty!"
   }
   this.orderBy = function()

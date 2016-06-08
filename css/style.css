@@ -1,0 +1,13 @@
+#banner {
+	background-color: darkorange;
+	margin-top: 0px;
+	color: white;
+	text-align: center;
+}
+#greeting {
+	color: darkorange;
+	font-size: 6em;
+	font-style: italic;
+	font-weight: bold;
+	margin-top: 40px;
+}
