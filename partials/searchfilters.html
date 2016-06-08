@@ -1,0 +1,22 @@
+<!-- CONTROLLER IS: Search Controller -->
+Search By Category:
+	<select ng-model='$ctrl.searchCategory' ng-change='$ctrl.changeSearch("category")'>
+		<option value='dark'>Dark</option>
+		<option value='cold'>Cold</option>
+		<option value='awesome'>Awesome</option>
+		<option value='dry'>Dry</option>
+		<option value='hot'>Hot</option>
+		<option value='summer'>Summer</option>
+		<option value='lucid'>Lucid</option>
+		<option value='warm'>Warm</option>
+		<option value='winter'>Winter</option>
+		<option value='spring'>Spring</option>
+	</select> 
+{{$ctrl.term}}
+Search By Name:
+	<input type="text" ng-model='$ctrl.searchName' ng-change='$ctrl.changeSearch("name")'>
+Order By Price:
+  <select ng-model='$ctrl.orderPref' ng-change='$ctrl.changeOrder($ctrl.orderPref)'>
+		<option value='true'>Highest</option>
+		<option value='false'>Lowest</option>
+	</select> 

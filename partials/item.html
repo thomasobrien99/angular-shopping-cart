@@ -1,0 +1,25 @@
+<!-- CONTROLLER IS ITEM CONTROLLER -->
+<li>
+	<h1>{{$ctrl.item}}</h1>
+	<h1>Subtotal: {{$ctrl.item.subtotal}}</h1>
+	<!-- <button ng-click="$ctrl.editItemQuantity()">Increase Quantity in Cart</button>
+	<button ng-click="$ctrl.editItemQuantity($ctrl.item.quantity - 1)">Decrease Quantity in Cart</button> -->
+	<select ng-model = "$ctrl.newQuantity">
+		<option value='1'>1</option>
+		<option value='2'>2</option>
+		<option value='3'>3</option>
+		<option value='4'>4</option>
+		<option value='5'>5</option>
+	</select>
+	<button ng-click="$ctrl.editItemQuantity(+$ctrl.newQuantity + $ctrl.item.quantity)">Add to Cart</button>	
+	<button ng-click="$ctrl.toggleEditItemQuantityForm()">Edit Quantity in Cart</button>
+	
+	<form ng-show= $ctrl.showEditItemQuantityForm 
+				name='form'
+				ng-submit="$ctrl.editItemQuantity($ctrl.newQuantity)"
+				novalidate>
+
+		<input type="text" ng-model='$ctrl.newQuantity'>
+		<button type="submit" ng-click='$ctrl.toggleEditItemQuantityForm()' >Change Quantity</button>
+	</form>
+</li>
