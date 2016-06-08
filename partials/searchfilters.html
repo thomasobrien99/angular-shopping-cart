@@ -1,4 +1,6 @@
 <!-- CONTROLLER IS: Search Controller -->
+<div id = 'searchRow'>
+
 Search By Category:
 	<select ng-model='$ctrl.searchCategory' ng-change='$ctrl.changeSearch("category")'>
 		<option value='dark'>Dark</option>
@@ -12,11 +14,15 @@ Search By Category:
 		<option value='winter'>Winter</option>
 		<option value='spring'>Spring</option>
 	</select> 
-{{$ctrl.term}}
+
 Search By Name:
 	<input type="text" ng-model='$ctrl.searchName' ng-change='$ctrl.changeSearch("name")'>
-Order By Price:
+
+<button type="button" class="btn btn-danger">Checkout | Bag: {{$ctrl.bagSize()}}</button>
+<!-- Order By Price:
   <select ng-model='$ctrl.orderPref' ng-change='$ctrl.changeOrder($ctrl.orderPref)'>
 		<option value='true'>Highest</option>
 		<option value='false'>Lowest</option>
-	</select> 
+	</select>
+ -->
+</div>

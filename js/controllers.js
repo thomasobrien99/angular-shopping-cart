@@ -4,13 +4,7 @@ ListController.$inject =["InventoryService"];
 
 function ListController(InventoryService){
 	this.items = InventoryService.getInventory();
-  this.bagSize = function(){
-    //MAY NEED TO BIND THIS
-    var size = this.items.reduce((p,c)=>{
-      return p += c.quantity;
-    },0)
-    return size ? size : "Bag is Empty!"
-  }
+  
   this.orderBy = function()
   {
     if (InventoryService.orderPref === "true")
@@ -55,6 +49,14 @@ function SearchController(InventoryService){
   }
   this.changeOrder = function(orderPref){
     InventoryService.changeOrderPref(this.orderPref);
+  }
+
+  this.bagSize = function(){
+    //MAY NEED TO BIND THIS
+    var size = InventoryService.getInventory().reduce((p,c)=>{
+      return p += c.quantity;
+    },0) 
+    return size ? size : "Bag is Empty!"
   }
 }
 

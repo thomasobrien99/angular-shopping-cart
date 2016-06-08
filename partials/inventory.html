@@ -1,5 +1,4 @@
 <h1>Inventory Partial Loaded</h1>
 <a ng-href = "checkout">Checkout!</a>
 <!-- CONTROLLER IS: ListController -->
-<h1>Bag Size : {{$ctrl.bagSize()}}</h1>
 <sa-item ng-repeat = 'item in $ctrl.items | filter:$ctrl.filterByCurrent | orderBy: "price":$ctrl.orderBy()' item="item"></sa-item>
