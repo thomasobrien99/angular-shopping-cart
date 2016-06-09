@@ -1,8 +1,10 @@
 <!-- CONTROLLER IS ITEM CONTROLLER -->
 <li>
-	<h1>{{$ctrl.item}}</h1>
-	<h3>{{$ctrl.item.price/100 | currency}}</h3>
-	<h1>Subtotal: {{$ctrl.item.subtotal/100 | currency}}</h1>
+  <img ng-src="{{$ctrl.item.imageUrl}}">
+  <h3>Name: {{$ctrl.item.name}}</h3>
+  <li>Price: {{$ctrl.item.price/100 | currency}}</li>
+  <li>Caffeine Scale: {{$ctrl.item.caffeineScale}}</li>
+	<li>Subtotal: {{$ctrl.item.subtotal/100 | currency}}</li>
 	<!-- <button ng-click="$ctrl.editItemQuantity()">Increase Quantity in Cart</button>
 	<button ng-click="$ctrl.editItemQuantity($ctrl.item.quantity - 1)">Decrease Quantity in Cart</button> -->
 	<select ng-model = "$ctrl.newQuantity">
