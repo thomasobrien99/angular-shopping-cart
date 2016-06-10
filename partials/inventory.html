@@ -1,4 +1,15 @@
 <!-- CONTROLLER IS: ListController -->
-<div>
-	<sa-item ng-repeat = 'item in $ctrl.items | filter:$ctrl.filterByCurrent | orderBy: "price":$ctrl.orderBy()' item="item">
+<div id='list'>
+  <div id='listHeader'>
+  	<span>Tea</span>
+  	<span id = "information">Information</span>
+  	<span class = "pull-right">Sort By Price
+			<select ng-model='$ctrl.orderPref'>
+				<option value="default">Highest</option>
+				<!-- Pass in a falsy value to reverse the list -->
+				<option value="">Lowest</option> 
+			</select>
+  	</span>
+  </div>
+	<sa-item ng-repeat = 'item in $ctrl.items | filter:$ctrl.filterByCurrent | orderBy: "price":$ctrl.orderPref' item="item">
 <div>

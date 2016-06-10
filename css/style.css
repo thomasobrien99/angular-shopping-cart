@@ -42,3 +42,14 @@
 .item-quantity {
 	margin-top: 0px;
 }
+#list {
+	border:3px dashed blue;
+}
+#listHeader {
+	display: flex;
+	justify-content: space-between;
+
+}
+#reverseOrder{
+
+}
