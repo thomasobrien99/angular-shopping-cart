@@ -13,4 +13,32 @@
 }
 #searchRow {
 	margin-top : 4em;
+	border : 2px solid black;
+	height : 40px;
+}
+.item {
+	border: 2px solid black;
+}
+.item-image {
+  border: 2px solid red;
+  display: inline-block;
+}
+.item-body {
+  border: 2px solid red;
+  display: inline-block;
+  vertical-align: top;
+  height: 223px;
+}
+.item-name {
+	margin-top: 0px;
+}
+.item-buttons {
+  border: 2px solid red;
+	display: inline-block;
+	vertical-align: top;
+	height: 223px;
+	float: right;
+}
+.item-quantity {
+	margin-top: 0px;
 }

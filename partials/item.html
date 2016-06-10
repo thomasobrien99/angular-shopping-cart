@@ -1,28 +1,32 @@
 <!-- CONTROLLER IS ITEM CONTROLLER -->
-<li>
-  <img ng-src="{{$ctrl.item.imageUrl}}">
-  <h3>Name: {{$ctrl.item.name}}</h3>
-  <li>Price: {{$ctrl.item.price/100 | currency}}</li>
-  <li>Caffeine Scale: {{$ctrl.item.caffeineScale}}</li>
-	<li>Subtotal: {{$ctrl.item.subtotal/100 | currency}}</li>
-	<!-- <button ng-click="$ctrl.editItemQuantity()">Increase Quantity in Cart</button>
-	<button ng-click="$ctrl.editItemQuantity($ctrl.item.quantity - 1)">Decrease Quantity in Cart</button> -->
-	<select ng-model = "$ctrl.newQuantity">
-		<option value='1'>1</option>
-		<option value='2'>2</option>
-		<option value='3'>3</option>
-		<option value='4'>4</option>
-		<option value='5'>5</option>
-	</select>
-	<button ng-click="$ctrl.editItemQuantity(+$ctrl.newQuantity + ($ctrl.item.quantity || 1))">Add to Cart</button>	
-	<button ng-click="$ctrl.toggleEditItemQuantityForm()">Edit Quantity in Cart</button>
-	
-	<form ng-show= $ctrl.showEditItemQuantityForm 
-				name='form'
-				ng-submit="$ctrl.editItemQuantity(+$ctrl.editFormQuantity)"
-				novalidate>
+<div class="item">
+  <div class="item-image">
+  	<img ng-src="{{$ctrl.item.imageUrl}}">
+  </div>
+  <div class="item-body">
+	  <h3 class="item-name">Name: {{$ctrl.item.name}}</h3>
+	  <li>Price: {{$ctrl.item.price/100 | currency}}</li>
+	  <li>Caffeine Scale: {{$ctrl.item.caffeineScale}}</li>
+		<li>Subtotal: {{$ctrl.item.subtotal/100 | currency}}</li>
+	</div>
+	<div class="item-buttons">
+	  <h3 class="item-quantity">Quantity:</h3>
+		<select ng-model = "$ctrl.newQuantity">
+			<option value='1'>1</option>
+			<option value='2'>2</option>
+			<option value='3'>3</option>
+			<option value='4'>4</option>
+			<option value='5'>5</option>
+		</select>
+		<button ng-click="$ctrl.editItemQuantity(+$ctrl.newQuantity + ($ctrl.item.quantity || 1))">Add to Cart</button>	
+		<button ng-click="$ctrl.toggleEditItemQuantityForm()">Edit Quantity in Cart</button>
+		<form ng-show= $ctrl.showEditItemQuantityForm 
+					name='form'
+					ng-submit="$ctrl.editItemQuantity(+$ctrl.editFormQuantity)"
+					novalidate>
 
-		<input type="text" ng-model='$ctrl.editFormQuantity'>
-		<button type="submit" ng-click='$ctrl.toggleEditItemQuantityForm()' >Change Quantity</button>
-	</form>
-</li>
+			<input type="text" ng-model='$ctrl.editFormQuantity'>
+			<button type="submit" ng-click='$ctrl.toggleEditItemQuantityForm()' >Change Quantity</button>
+		</form>
+	</div>
+</div>
