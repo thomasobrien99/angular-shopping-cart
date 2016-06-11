@@ -62,6 +62,23 @@ li {
 .itemProperty{
 	font-weight: bold;
 }
+.cartItemBody{
+	width: 40em;
+}
+.cartItemQuantity{
+	vertical-align: top;
+	width: 7em;
+}
+.cartItem {
+	border: 2px solid lightgrey;
+	height: 30em;
+}
+.cartItem div {
+	display: inline-block;
+	height: 100%;
+	vertical-align: top;
+	border-right: 2px solid lightgrey;
+}
 
 #cartHeaderRow1{
 	display: flex;
@@ -86,4 +103,9 @@ li {
 }
 #cartSubtotalHeader{
 	width : 7em;
+}
+.cartItemSubtotal{
+	width : 7em;
+	padding-left: .5em
+	padding-right: 1em;
 }

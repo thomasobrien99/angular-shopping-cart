@@ -23,3 +23,10 @@ app.component('saSearchFilters', {
 	controller: SearchController,
 	templateUrl: "../partials/searchfilters.html"
 })
+app.component('saCartItem', {
+	bindings:{
+		item: '<'
+	},
+	controller: ItemController,
+	templateUrl: "../partials/cartItem.html"
+})

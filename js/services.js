@@ -145,7 +145,7 @@ app.service('InventoryService', function(){
 		{
             if(newQuantity !== undefined)
             {
-                this.quantity += newQuantity||1;
+                this.quantity = newQuantity;
             }
             else
             {

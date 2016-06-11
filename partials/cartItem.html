@@ -1,0 +1,28 @@
+<!-- CONTROLLER IS ITEM CONTROLLER -->
+<div class = "cartItem">
+  <div class="cartItemBody">
+    <h3 class="item-name">Name: {{$ctrl.item.name}}</h3>
+  	<img ng-src="{{$ctrl.item.imageUrl}}">
+	  <h5><span class = "itemProperty">Caffeine Scale:</span> {{$ctrl.item.caffeineScale}}</h5>
+		<h5><span class = "itemProperty">Ingredients:</span> {{$ctrl.item.ingredients}}</h5>
+		<h5><span class = "itemProperty">Rating:</span> {{$ctrl.item.rating}}</h5>
+	</div>
+	<div class="cartItemQuantity">
+	  <span ng-hide = "$ctrl.showEditItemQuantityForm">{{$ctrl.item.quantity}}</span>
+		<form ng-show= $ctrl.showEditItemQuantityForm 
+					name='form'
+					ng-submit="$ctrl.editItemQuantity(+$ctrl.editFormQuantity)"
+					novalidate>
+
+			<input type="text" size = "6" ng-model='$ctrl.editFormQuantity' value="$ctrl.item.quantity">
+			<button type="submit" ng-click='$ctrl.toggleEditItemQuantityForm()'>Submit!</button>
+		</form>
+	</div>
+	<div class="cartItemSubtotal">
+	  {{$ctrl.item.subtotal/100 | currency}}
+	</div>
+	<div class="cartEditButtons">
+	  <button class = 'btn btn-warning' ng-click="$ctrl.toggleEditItemQuantityForm()">Edit</button>
+	  <button class = 'btn btn-danger' ng-click="$ctrl.editItemQuantity(0)">Remove</button>	
+	</div>
+</div>

@@ -28,6 +28,10 @@ app.controller('ItemController', ItemController)
 ItemController.$inject = ["InventoryService"];
 
 function ItemController(InventoryService){
+  this.subtotal = function(){
+    return this.item.quantity.this.item.price;
+  }
+  
 	this.showEditItemQuantityForm = false;
 
   this.editItemQuantity = InventoryService.editItemQuantity.bind(this.item);
