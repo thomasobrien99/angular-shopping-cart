@@ -1,0 +1,18 @@
+<!-- CONTROLLER : LIST CONTROLLER -->
+
+<h1 ng-show="!$ctrl.cartTotal()">Put Some Items In Your Cart!</h1>
+
+<div ng-show="$ctrl.cartTotal()" id='cart'>
+  <div id='cartHeader'>
+    <div id = 'cartHeaderRow1'>
+      <h2 id="myShoppingBag">My Shopping Bag</h2>
+      <h2 id="cartTotal">Order total: {{$ctrl.cartTotal()/100 | currency}}</h2>
+    </div>
+    <div id = 'cartHeaderRow2'>
+      <div id="cartProductHeader">Product</div>
+      <div id="cartQuantityHeader">Quantity</div>
+      <div id="cartSubtotalHeader">Sub-total</div>
+    </div>
+  </div>
+  <sa-cart-item ng-repeat="item in $ctrl.items | filter: {inCart : 'true'}" item="item"></sa-item>
+<div>

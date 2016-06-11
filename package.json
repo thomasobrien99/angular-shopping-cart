@@ -1,0 +1,27 @@
+{
+  "name": "shopping_cart_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasobrien99/angular-shopping-cart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomasobrien99/angular-shopping-cart/issues"
+  },
+  "homepage": "https://github.com/thomasobrien99/angular-shopping-cart#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "knex": "^0.11.5",
+    "locus": "^1.2.0",
+    "morgan": "^1.7.0",
+    "pg": "^5.1.0"
+  }
+}
