@@ -23,10 +23,3 @@ app.component('saSearchFilters', {
 	controller: SearchController,
 	templateUrl: "../partials/searchfilters.html"
 })
-app.component('saTotal', {
-	bindings:{
-		items: '<'
-	},
-	controller: TotalController,
-	templateUrl: "../partials/totals.html"
-})

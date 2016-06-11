@@ -1,7 +1,0 @@
-What is a JWT
- An object consisting of three parts, a header, a payload, and a signature.
- It is used to authenticate users on a web page by 
-
- Previously, we have used Passport, Bcrypt, Cookies
-
- In the header, there is the name of the encryption algorhythm, and the type: JWT

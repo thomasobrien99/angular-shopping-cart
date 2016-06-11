@@ -54,14 +54,3 @@ function SearchController(InventoryService){
     return size ? size : "Bag is Empty!"
   }
 }
-
-app.controller('TotalController', TotalController);
-
-TotalController.$inject = ["InventoryService"];
-
-function TotalController(InventoryService){
-  this.total = this.items.reduce((p,c)=>{
-    return p + c.subtotal;
-  },0)
-}
-
