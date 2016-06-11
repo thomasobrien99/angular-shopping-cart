@@ -13,8 +13,11 @@ function ListController(InventoryService, $http){
 
   //this.items = InventoryService.getInventory();
   //////////////////////////////////////////////////
-
-	
+  
+  this.inCartFilter = function(item)
+  {
+    return item.quantity > 0;
+  }
 
   this.cartTotal = function(){
     return this.items.reduce((p,c)=>{

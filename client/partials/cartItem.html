@@ -19,7 +19,7 @@
 		</form>
 	</div>
 	<div class="cartItemSubtotal">
-	  {{$ctrl.item.subtotal/100 | currency}}
+	  {{($ctrl.item.price * $ctrl.item.quantity)/100 | currency}}
 	</div>
 	<div class="cartEditButtons">
 	  <button class = 'btn btn-warning' ng-click="$ctrl.toggleEditItemQuantityForm()">Edit</button>

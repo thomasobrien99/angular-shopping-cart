@@ -14,5 +14,5 @@
       <div id="cartSubtotalHeader">Sub-total</div>
     </div>
   </div>
-  <sa-cart-item ng-repeat="item in $ctrl.items | filter: {inCart : 'true'}" item="item"></sa-item>
+  <sa-cart-item ng-repeat="item in $ctrl.items | filter:$ctrl.inCartFilter" item="item"></sa-item>
 <div>
