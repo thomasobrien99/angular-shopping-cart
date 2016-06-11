@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     knex('teas').del(),
     // Inserts seed entries
     knex('teas').insert({
-            "_id": "55c8ee82152165d244b98300",
+            "id": "55c8ee82152165d244b98300",
             "name": "Bayard stew",
             "ingredients": "concentrated gluten, jewelry, dill, beetle nut, toast",
             "caffeineScale": 244,
@@ -15,10 +15,10 @@ exports.seed = function(knex, Promise) {
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/32664_d?$cimg$",
             "__v": 0,
             "categories": '["dark","cold"]',
-            "quantity": 0
+            "quantity": 5
         }),
     knex('teas').insert({
-            "_id": "55c8ee82152165d244b98301",
+            "id": "55c8ee82152165d244b98301",
             "name": "Incompactness syrup",
             "ingredients": "fennel, nutmeg leaves, parsley, cream of 'cream of cream', blarney",
             "caffeineScale": 49,
@@ -31,7 +31,7 @@ exports.seed = function(knex, Promise) {
             "quantity": 0
         }),
     knex('teas').insert({
-            "_id": "55c8ee82152165d244b98302",
+            "id": "55c8ee82152165d244b98302",
             "name": "Flexner white tea",
             "ingredients": "hot sauce, iron, beetle nut, fresco, blarney, raw mashed potato",
             "caffeineScale": 38,
@@ -44,7 +44,7 @@ exports.seed = function(knex, Promise) {
             "quantity": 0
         }),
     knex('teas').insert({
-            "_id": "55c8ee82152165d244b98303",
+            "id": "55c8ee82152165d244b98303",
             "name": "Pressor leaf",
             "ingredients": "purina chow, flavorings, pepper, acorns, quality tallow, old sock, bay leaf",
             "caffeineScale": 153,
@@ -57,7 +57,7 @@ exports.seed = function(knex, Promise) {
             "quantity": 0
         }),
     knex('teas').insert({
-            "_id": "55c8ee82152165d244b98304",
+            "id": "55c8ee82152165d244b98304",
             "name": "Flexner veggie tea",
             "ingredients": "cream of tartar, eggplant, cake, deer antler",
             "caffeineScale": 181,
@@ -70,7 +70,7 @@ exports.seed = function(knex, Promise) {
             "quantity": 0
         }),
     knex('teas').insert({
-            "_id": "55c8ee82152165d244b98305",
+            "id": "55c8ee82152165d244b98305",
             "name": "Topflighter malt",
             "ingredients": "botox, toast, cream of 'cream of 'cream of cream'', kitchen scraps, beef, aligator tongue, lawn clippings",
             "caffeineScale": 241,
@@ -83,7 +83,7 @@ exports.seed = function(knex, Promise) {
             "quantity": 0
         }),
     knex('teas').insert({
-            "_id": "55c8ee82152165d244b98306",
+            "id": "55c8ee82152165d244b98306",
             "name": "Cooking mix",
             "ingredients": "flavorings, roasted mushrooms, toast, tumeric",
             "caffeineScale": 230,
@@ -96,7 +96,7 @@ exports.seed = function(knex, Promise) {
             "quantity": 0
         }),
     knex('teas').insert({
-            "_id": "55c8ee82152165d244b98307",
+            "id": "55c8ee82152165d244b98307",
             "name": "Cooking stew",
             "ingredients": "eggplant",
             "caffeineScale": 122,
@@ -109,7 +109,7 @@ exports.seed = function(knex, Promise) {
             "quantity": 0
         }),
     knex('teas').insert({
-            "_id": "55c8ee82152165d244b98308",
+            "id": "55c8ee82152165d244b98308",
             "name": "Prevenient herb tea",
             "ingredients": "cream of tartar, cream of cream, kitchen scraps, flavorings",
             "caffeineScale": 196,
@@ -122,7 +122,7 @@ exports.seed = function(knex, Promise) {
             "quantity": 0
         }),
     knex('teas').insert({
-            "_id": "55c8ee82152165d244b98309",
+            "id": "55c8ee82152165d244b98309",
             "name": "Angular mix",
             "ingredients": "hot sauce, lawn clippings, fennel, parsley, quinine",
             "caffeineScale": 196,

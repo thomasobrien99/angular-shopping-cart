@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('teas', table=>{
-    table.string('_id');
+    table.string('id');
     table.string('name');
     table.string('ingredients');
     table.integer('caffeineScale');

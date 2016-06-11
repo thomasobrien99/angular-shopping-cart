@@ -1,11 +1,20 @@
 app.controller('ListController', ListController)
 
-ListController.$inject =["InventoryService"];
+ListController.$inject =["InventoryService", "$http"];
 
-function ListController(InventoryService){
+function ListController(InventoryService, $http){
   this.orderPref = 'default';
+  
+  //////////////////////////////////////////////////
+  var vm = this;
+  $http.get('/api/teas').then(function(res){
+    vm.items = res.data;
+  })
 
-	this.items = InventoryService.getInventory();
+  //this.items = InventoryService.getInventory();
+  //////////////////////////////////////////////////
+
+	
 
   this.cartTotal = function(){
     return this.items.reduce((p,c)=>{
@@ -43,18 +52,31 @@ function ItemController(InventoryService){
 
 app.controller('SearchController', SearchController)
 
-SearchController.$inject = ["InventoryService"];
+SearchController.$inject = ["InventoryService", "$http"];
 
-function SearchController(InventoryService){
+
+//////////////////////////////////////////////
+// Bag count is not working because it is checking against the old inventory;
+// Also the new inventory is not being updated based on clicks;
+//////////////////////////////////////////////
+function SearchController(InventoryService, $http){
+  var vm = this;
+
   this.changeSearch = function(type){
   	if(type === "category") InventoryService.changeSearchTerm(this.searchCategory, type); //THIS COULD BE WAY CLEANER
   	if(type === "name") InventoryService.changeSearchTerm(this.searchName, type);
   }
 
-  this.bagSize = function(){
-    var size = InventoryService.getInventory().reduce((p,c)=>{
+  vm.size = 0;
+  
+  $http.get('/api/teas').then(function(res){
+      vm.size = res.data.reduce((p,c)=>{
       return p += c.quantity;
     },0) 
-    return size ? size : "Bag is Empty!"
-  }
+  })
+    // var size = InventoryService.getInventory().reduce((p,c)=>{
+    //   return p += c.quantity;
+    // },0) 
+    // return vm.size ? vm.size : "Bag is Empty!"
+  
 }

@@ -1,4 +1,4 @@
-app.service('InventoryService', function(){
+app.service('InventoryService', function($http){
 	var inventory = [
         {
             "_id": "55c8ee82152165d244b98300",
@@ -143,16 +143,23 @@ app.service('InventoryService', function(){
 		},
 		editItemQuantity: function(newQuantity)
 		{
+            var body = {};
             if(newQuantity !== undefined)
             {
-                this.quantity = newQuantity;
+                body.quantity = newQuantity;
             }
             else
             {
-                this.quantity++;
+                body.quantity = ++this.quantity;
             }
-			this.subtotal = this.quantity * this.price;
-			this.inCart = this.quantity > 0;
+            
+            $http.put('/api/teas/'+this.name, body).then(function(res)
+            {
+                
+            });
+
+			// this.subtotal = this.quantity * this.price;
+			// this.inCart = this.quantity > 0;
 		},
 		changeSearchTerm: function(term, type){
 			this.searchType = type;
