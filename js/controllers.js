@@ -7,6 +7,11 @@ function ListController(InventoryService){
 
 	this.items = InventoryService.getInventory();
 
+  this.cartTotal = function(){
+    return this.items.reduce((p,c)=>{
+      return p+c.quantity*c.price;},0)
+  };
+
   this.filterByCurrent = function(el){
   	if(!InventoryService.searchTerm) return true;
   	if(InventoryService.searchType === 'category') return el.categories.includes(InventoryService.searchTerm)

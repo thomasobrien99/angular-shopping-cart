@@ -1,2 +1,15 @@
-<sa-item ng-repeat="item in $ctrl.items | filter: {inCart : 'true'}" item="item"></sa-item>
-<sa-total items="$ctrl.items"></sa-total>
+<!-- CONTROLLER : LIST CONTROLLER -->
+<div id='cart'>
+  <div id='cartHeader'>
+    <div id = 'cartHeaderRow1'>
+      <h2 id="myShoppingBag">My Shopping Bag</h2>
+      <h2 id="cartTotal">Order total: {{$ctrl.cartTotal()}}</h2>
+    </div>
+    <div id = 'cartHeaderRow2'>
+      <div id="cartProductHeader">Product</div>
+      <div id="cartQuantityHeader">Quantity</div>
+      <div id="cartSubtotalHeader">Sub-total</div>
+    </div>
+  </div>
+  <sa-item ng-repeat="item in $ctrl.items | filter: {inCart : 'true'}" item="item"></sa-item>
+<div>
