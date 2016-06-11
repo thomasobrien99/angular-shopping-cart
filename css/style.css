@@ -27,7 +27,7 @@
   border: 2px solid red;
   display: inline-block;
   vertical-align: top;
-  height: 223px;
+  width: 30em;
 }
 .item-name {
 	margin-top: 0px;
@@ -36,11 +36,11 @@
   border: 2px solid red;
 	display: inline-block;
 	vertical-align: top;
-	height: 223px;
 	float: right;
 }
 .item-quantity {
 	margin-top: 0px;
+	display: inline;
 }
 #list {
 	border:3px dashed blue;
@@ -50,6 +50,7 @@
 	justify-content: space-between;
 
 }
-#reverseOrder{
+.itemProperty{
+	font-weight: bold;
 
 }

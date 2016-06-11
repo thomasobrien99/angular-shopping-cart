@@ -1,12 +1,6 @@
-app.filter('inCart', function() {
-  return function(el) {
-  	debugger
-    return el.quantity > 0;
-  }
-});
 
-function inCart(){
-	return function(el){
-		return el.quantity > 0;
-	}
-}
+app.filter('yesNo', function() {
+    return function(input) {
+        return input ? 'Yes' : 'No :(';
+    }
+});

@@ -5,9 +5,15 @@
   </div>
   <div class="item-body">
 	  <h3 class="item-name">Name: {{$ctrl.item.name}}</h3>
-	  <li>Price: {{$ctrl.item.price/100 | currency}}</li>
-	  <li>Caffeine Scale: {{$ctrl.item.caffeineScale}}</li>
-		<li>Subtotal: {{$ctrl.item.subtotal/100 | currency}}</li>
+	  <h5><span class = "itemProperty">Price:</span> {{$ctrl.item.price/100 | currency}}</h5>
+	  <h5><span class = "itemProperty">Caffeine Scale:</span> {{$ctrl.item.caffeineScale}}</h5>
+		<h5><span class = "itemProperty">Ingredients:</span> {{$ctrl.item.ingredients}}</h5>
+		<h5><span class = "itemProperty">Rating:</span> {{$ctrl.item.rating}}</h5>
+		<h5><span class = "itemProperty">In Stock:</span> {{$ctrl.item.inStock | yesNo }}</h5>
+		<h5><span class = "itemProperty">Categories:</span> 
+			<ul>
+				<li ng-repeat = "cat in $ctrl.item.categories">{{cat}}</li>
+			</ul></h5>
 	</div>
 	<div class="item-buttons">
 	  <h3 class="item-quantity">Quantity:</h3>
@@ -18,8 +24,7 @@
 			<option value='4'>4</option>
 			<option value='5'>5</option>
 		</select>
-		<button ng-click="$ctrl.editItemQuantity(+$ctrl.newQuantity + ($ctrl.item.quantity || 1))">Add to Cart</button>	
-		<button ng-click="$ctrl.toggleEditItemQuantityForm()">Edit Quantity in Cart</button>
+		<button class = 'btn btn-warning' ng-click="$ctrl.editItemQuantity(+$ctrl.newQuantity + ($ctrl.item.quantity || 1))">Add to Cart</button>	
 		<form ng-show= $ctrl.showEditItemQuantityForm 
 					name='form'
 					ng-submit="$ctrl.editItemQuantity(+$ctrl.editFormQuantity)"
