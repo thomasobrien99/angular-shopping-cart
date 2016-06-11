@@ -31,10 +31,11 @@ function ItemController(InventoryService){
   this.subtotal = function(){
     return this.item.quantity.this.item.price;
   }
-  
+
 	this.showEditItemQuantityForm = false;
 
   this.editItemQuantity = InventoryService.editItemQuantity.bind(this.item);
+  
   this.toggleEditItemQuantityForm = function(){
     this.showEditItemQuantityForm = !this.showEditItemQuantityForm;
   }
@@ -51,7 +52,6 @@ function SearchController(InventoryService){
   }
 
   this.bagSize = function(){
-    //MAY NEED TO BIND THIS
     var size = InventoryService.getInventory().reduce((p,c)=>{
       return p += c.quantity;
     },0) 

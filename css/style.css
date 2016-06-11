@@ -1,6 +1,7 @@
+/*TEMPLATE*/
 #banner {
 	background-color: darkorange;
-	margin-top: 0px;
+	margin-top: 0em;
 	color: white;
 	text-align: center;
 }
@@ -9,23 +10,22 @@
 	font-size: 6em;
 	font-style: italic;
 	font-weight: bold;
-	margin-top: 40px;
+	margin-top: 1.5em;
 }
+/*SEARCH ROW*/
 #searchRow {
 	margin-top : 4em;
-	/*border : 2px solid black;*/
-	height : 40px;
+	height : 3em;
 }
+/*INVENTORY ITEMS*/
 .item {
 	border-bottom: 2px solid lightgrey;
 }
 .item-image {
-  /*border: 2px solid red;*/
   display: inline-block;
   height: 100%;
 }
 .item-body {
-  /*border: 2px solid red;*/
   padding-top: 2em;
   padding-left: 1em;
   display: inline-block;
@@ -34,10 +34,12 @@
   width: 30em;
 }
 .item-name {
-	margin-top: 0px;
+	margin-top: 0em;
+}
+.itemProperty{
+	font-weight: bold;
 }
 .item-buttons {
-  /*border: 2px solid red;*/
   margin-top: 2em;
   margin-right: .5em;
 	display: inline-block;
@@ -45,41 +47,22 @@
 	float: right;
 }
 .item-quantity {
-	margin-top: 0px;
+	margin-top: 0em;
 	display: inline;
-}
-#list {
-	border: 2px solid lightgrey;
 }
 li {
 	margin: .5em;
+}
+/*INVENTORY LIST*/
+#list {
+	border: 2px solid lightgrey;
 }
 #listHeader {
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 2px solid lightgrey;
 }
-.itemProperty{
-	font-weight: bold;
-}
-.cartItemBody{
-	width: 40em;
-}
-.cartItemQuantity{
-	vertical-align: top;
-	width: 7em;
-}
-.cartItem {
-	border: 2px solid lightgrey;
-	height: 30em;
-}
-.cartItem div {
-	display: inline-block;
-	height: 100%;
-	vertical-align: top;
-	border-right: 2px solid lightgrey;
-}
-
+/*CART LIST*/
 #cartHeaderRow1{
 	display: flex;
 	justify-content: space-between;
@@ -108,4 +91,22 @@ li {
 	width : 7em;
 	padding-left: .5em
 	padding-right: 1em;
+}
+/*CART ITEMS*/
+.cartItemBody{
+	width: 40em;
+}
+.cartItemQuantity{
+	vertical-align: top;
+	width: 7em;
+}
+.cartItem {
+	border: 2px solid lightgrey;
+	height: 30em;
+}
+.cartItem div {
+	display: inline-block;
+	height: 100%;
+	vertical-align: top;
+	border-right: 2px solid lightgrey;
 }

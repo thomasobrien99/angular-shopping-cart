@@ -1,16 +1,13 @@
 app.component('saList',{
-	bindings:{
-  },
 	controller: ListController,
 	templateUrl: '../partials/inventory.html'
 })
-app.component('saCart', {
-	bindings:{
 
-	},
+app.component('saCart', {
 	controller: ListController,
 	templateUrl: '../partials/cart.html'
 })
+
 app.component('saItem',{
 	bindings:{
 		item: '<'
@@ -18,11 +15,12 @@ app.component('saItem',{
 	controller: ItemController,
 	templateUrl: "../partials/item.html"
 })
+
 app.component('saSearchFilters', {
-	bindings:{},
 	controller: SearchController,
 	templateUrl: "../partials/searchfilters.html"
 })
+
 app.component('saCartItem', {
 	bindings:{
 		item: '<'
