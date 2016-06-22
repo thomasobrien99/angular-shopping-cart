@@ -4,6 +4,7 @@ app.service('InventoryService', function($http){
 		searchTerm : '',
 		searchType : '',
 		orderPref: 'true',
+
 		getInventory: function(){
 		   return $http.get('/api/teas');
 		},

@@ -24,7 +24,9 @@
 			<option value='4'>4</option>
 			<option value='5'>5</option>
 		</select>
-		<button class = 'btn btn-warning' ng-click="$ctrl.editItemQuantity(+$ctrl.newQuantity||1)">Add to Cart</button>	
+		<button class = 'btn btn-warning' 
+						ng-click= "$ctrl.editItemQuantity(((+$ctrl.newQuantity||1)+$ctrl.item.quantity))">Add to Cart</button>	
+						<!-- BADLY IN NEED OF REFACTOR -->
 		<form ng-show= $ctrl.showEditItemQuantityForm 
 					name='form'
 					ng-submit="$ctrl.editItemQuantity(+$ctrl.editFormQuantity)"
