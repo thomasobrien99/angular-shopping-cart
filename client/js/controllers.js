@@ -3,17 +3,14 @@ app.controller('ListController', ListController)
 ListController.$inject =["InventoryService", "$http"];
 
 function ListController(InventoryService, $http){
-  this.orderPref = 'default';
-  
-  //////////////////////////////////////////////////
   var vm = this;
-  $http.get('/api/teas').then(function(res){
+
+  vm.orderPref = 'default';
+
+  InventoryService.getInventory().then(function(res){
     vm.items = res.data;
   })
 
-  //this.items = InventoryService.getInventory();
-  //////////////////////////////////////////////////
-  
   this.inCartFilter = function(item)
   {
     return item.quantity > 0;
@@ -43,7 +40,7 @@ function ItemController(InventoryService){
   this.subtotal = function(){
     return this.item.quantity.this.item.price;
   }
-
+  
 	this.showEditItemQuantityForm = false;
 
   this.editItemQuantity = InventoryService.editItemQuantity.bind(this.item);
@@ -72,6 +69,9 @@ function SearchController(InventoryService, $http){
 
   vm.size = 0;
   
+  //size starts at zero, get request is sent, returns the total of all quantities
+  //how to trigger re-sending of this get so that teas are updated.
+
   $http.get('/api/teas').then(function(res){
       vm.size = res.data.reduce((p,c)=>{
       return p += c.quantity;
