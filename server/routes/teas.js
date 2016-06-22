@@ -32,8 +32,9 @@ router.route('/:name')
 		knex('teas')
 			.where('name',req.params.name)
 			.update(req.body)
+			.returning('quantity')
 			.then(function(data){
-				res.send(200)
+				res.send(data)
 			}).catch(function(err){
 				res.send(err);
 		})

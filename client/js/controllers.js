@@ -37,16 +37,23 @@ app.controller('ItemController', ItemController)
 ItemController.$inject = ["InventoryService"];
 
 function ItemController(InventoryService){
-  this.subtotal = function(){
-    return this.item.quantity.this.item.price;
+  var vm = this;
+
+  vm.subtotal = function(){
+    return vm.item.quantity*vm.item.price;
   }
   
-	this.showEditItemQuantityForm = false;
+	vm.showEditItemQuantityForm = false;
 
-  this.editItemQuantity = InventoryService.editItemQuantity.bind(this.item);
+  vm.editItemQuantity = function(addQuant){
+    var newQuant = vm.item.quantity + addQuant;
+    InventoryService.editItemQuantity(vm.item.name, newQuant).then(function(res){
+      vm.item.quantity = res.data[0];
+    });
+  } 
   
-  this.toggleEditItemQuantityForm = function(){
-    this.showEditItemQuantityForm = !this.showEditItemQuantityForm;
+  vm.toggleEditItemQuantityForm = function(){
+    vm.showEditItemQuantityForm = !vm.showEditItemQuantityForm;
   }
 }
 
